@@ -51,15 +51,15 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"container": {
-								"value": "container = @pipeline().parameters.source_container",
+								"value": "@pipeline().parameters.source_container",
 								"type": "Expression"
 							},
 							"folder": {
-								"value": "folder    = @pipeline().parameters.source_folder",
+								"value": "@pipeline().parameters.source_folder",
 								"type": "Expression"
 							},
 							"file": {
-								"value": "file = @pipeline().parameters.source_file",
+								"value": "@pipeline().parameters.source_file",
 								"type": "Expression"
 							}
 						}
@@ -71,15 +71,15 @@
 						"type": "DatasetReference",
 						"parameters": {
 							"container": {
-								"value": "container = @pipeline().parameters.target_container",
+								"value": "@pipeline().parameters.target_container",
 								"type": "Expression"
 							},
 							"folder": {
-								"value": "folder = @pipeline().parameters.target_folder",
+								"value": "@pipeline().parameters.target_folder",
 								"type": "Expression"
 							},
 							"file": {
-								"value": "file = @pipeline().parameters.target_file",
+								"value": "@pipeline().parameters.target_file",
 								"type": "Expression"
 							}
 						}
