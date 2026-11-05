@@ -70,8 +70,7 @@
 									"physicalType": "String"
 								},
 								"sink": {
-									"name": "Animal's Name",
-									"type": "String",
+									"name": "AnimalsName",
 									"physicalType": "UTF8"
 								}
 							},
