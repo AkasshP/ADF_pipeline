@@ -1,0 +1,10 @@
+{
+	"name": "ls_adls_spl",
+	"properties": {
+		"annotations": [],
+		"type": "AzureBlobFS",
+		"typeProperties": {
+			"url": "https://splparamasivan2026.dfs.core.windows.net/"
+		}
+	}
+}
