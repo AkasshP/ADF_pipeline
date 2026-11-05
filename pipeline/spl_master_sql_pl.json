@@ -1,0 +1,53 @@
+{
+	"name": "spl_master_sql_pl",
+	"properties": {
+		"activities": [
+			{
+				"name": "ForEach1",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.files_list",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "source_to_sql_pl",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"policy": {
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "source_to_sql_pl",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true,
+								"parameters": {
+									"source_container": "source-files",
+									"source_folder": "spl",
+									"source_file": "@item()"
+								}
+							}
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"files_list": {
+				"type": "array",
+				"defaultValue": [
+					"Seattle_Pet_Licenses_20260915 (1).csv",
+					"Seattle_Pet_Licenses_20261001.csv",
+					"Seattle_Pet_Licenses_20261015.csv"
+				]
+			}
+		},
+		"annotations": []
+	}
+}
