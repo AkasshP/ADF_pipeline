@@ -12,6 +12,7 @@
 						"value": "@pipeline().parameters.files_list",
 						"type": "Expression"
 					},
+					"isSequential": false,
 					"activities": [
 						{
 							"name": "Execute Pipeline1",
@@ -49,6 +50,11 @@
 					"Seattle_Pet_Licenses_20261001.csv",
 					"Seattle_Pet_Licenses_20261015.csv"
 				]
+			}
+		},
+		"variables": {
+			"current_file": {
+				"type": "String"
 			}
 		},
 		"annotations": []
