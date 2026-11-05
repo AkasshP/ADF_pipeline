@@ -11,7 +11,37 @@
 					"items": {
 						"value": "@pipeline().parameters.files_list",
 						"type": "Expression"
-					}
+					},
+					"activities": [
+						{
+							"name": "Execute Pipeline1",
+							"type": "ExecutePipeline",
+							"dependsOn": [],
+							"policy": {
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": ""
+								}
+							],
+							"typeProperties": {
+								"pipeline": {
+									"referenceName": "source_to_parquet_pl",
+									"type": "PipelineReference"
+								},
+								"waitOnCompletion": true,
+								"parameters": {
+									"source_container": "source-files",
+									"source_folder": "spl",
+									"source_file": "@item()",
+									"target_container": "output",
+									"target_folder": "/",
+									"target_file": "@concat(replace(item(),'.csv',''),'.parquet')"
+								}
+							}
+						}
+					]
 				}
 			}
 		],
