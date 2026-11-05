@@ -20,11 +20,7 @@
 							"policy": {
 								"secureInput": false
 							},
-							"userProperties": [
-								{
-									"name": ""
-								}
-							],
+							"userProperties": [],
 							"typeProperties": {
 								"pipeline": {
 									"referenceName": "source_to_parquet_pl",
