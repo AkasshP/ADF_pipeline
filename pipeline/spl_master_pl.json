@@ -38,7 +38,7 @@
 									"target_container": "output",
 									"target_folder": "parquet",
 									"target_file": {
-										"value": "@concat(\n  'spl_fall2026_',\n  substring(variables('current_file'),sub(length(variables('current_file')),12),4),\n  '_',\n  substring(variables('current_file'),sub(length(variables('current_file')),8),2),\n  '_',\n  substring(variables('current_file'),sub(length(variables('current_file')),6),2),\n  '.parquet'\n)",
+										"value": "@concat(\n  'spl_fall2026_',\n  substring(replace(replace(variables('current_file'),'Seattle_Pet_Licenses_',''),'.csv',''),0,4),\n  '_',\n  substring(replace(replace(variables('current_file'),'Seattle_Pet_Licenses_',''),'.csv',''),4,2),\n  '_',\n  substring(replace(replace(variables('current_file'),'Seattle_Pet_Licenses_',''),'.csv',''),6,2),\n  '.parquet'\n)",
 										"type": "Expression"
 									}
 								}
