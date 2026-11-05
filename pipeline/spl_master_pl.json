@@ -31,10 +31,16 @@
 								"parameters": {
 									"source_container": "source-files",
 									"source_folder": "spl",
-									"source_file": "@item()",
+									"source_file": {
+										"value": "@variables('current_file')",
+										"type": "Expression"
+									},
 									"target_container": "output",
-									"target_folder": "/",
-									"target_file": "@concat(replace(item(),'.csv',''),'.parquet')"
+									"target_folder": "parquet",
+									"target_file": {
+										"value": "@concat(\n  'spl_fall2026_',\n  substring(variables('current_file'),sub(length(variables('current_file')),12),4),\n  '_',\n  substring(variables('current_file'),sub(length(variables('current_file')),8),2),\n  '_',\n  substring(variables('current_file'),sub(length(variables('current_file')),6),2),\n  '.parquet'\n)",
+										"type": "Expression"
+									}
 								}
 							}
 						}
