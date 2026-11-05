@@ -1,0 +1,15 @@
+{
+	"name": "adf-spl-paramasivan-2026",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "canadacentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "67139ad7-0ce5-4325-8b44-2c626d684d86",
+		"tenantId": "a8eec281-aaa3-4dae-ac9b-9a398b9215e7"
+	}
+}
